@@ -38,15 +38,13 @@ public class ConfigManager
         }
     }
 
-    public Settings LoadSettings()
+    public Settings? LoadSettings()
     {
         try
         {
-            using (var stream = new FileStream(configFilePath, FileMode.Open, FileAccess.Read))
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(Settings));
-                return (Settings)serializer.Deserialize(stream);
-            }
+            using var stream = new FileStream(configFilePath, FileMode.Open, FileAccess.Read);
+            XmlSerializer serializer = new(typeof(Settings));
+            return serializer.Deserialize(stream) as Settings;
         }
         catch
         {
@@ -64,11 +62,9 @@ public class ConfigManager
     {
         try
         {
-            using (var stream = new FileStream(configFilePath, FileMode.Create, FileAccess.Write))
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(Settings));
-                serializer.Serialize(stream, settings);
-            }
+            using var stream = new FileStream(configFilePath, FileMode.Create, FileAccess.Write);
+            XmlSerializer serializer = new(typeof(Settings));
+            serializer.Serialize(stream, settings);
         }
         catch (Exception ex)
         {
