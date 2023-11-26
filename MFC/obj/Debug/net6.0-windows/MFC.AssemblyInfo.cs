@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MFC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3974529d45d8c54fe1f2e05f183742b8bdeec383")]
 [assembly: System.Reflection.AssemblyProductAttribute("MFC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MFC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

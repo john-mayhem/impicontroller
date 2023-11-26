@@ -1,0 +1,17 @@
+D:\Dev\impicontroller\MFC\bin\Debug\net6.0-windows\MFC.exe
+D:\Dev\impicontroller\MFC\bin\Debug\net6.0-windows\MFC.deps.json
+D:\Dev\impicontroller\MFC\bin\Debug\net6.0-windows\MFC.runtimeconfig.json
+D:\Dev\impicontroller\MFC\bin\Debug\net6.0-windows\MFC.dll
+D:\Dev\impicontroller\MFC\bin\Debug\net6.0-windows\MFC.pdb
+D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.Form1.resources
+D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.csproj.GenerateResource.cache
+D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.AssemblyInfoInputs.cache
+D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.AssemblyInfo.cs
+D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.csproj.CoreCompileInputs.cache
+D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.dll
+D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\refint\MFC.dll
+D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.pdb
+D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.genruntimeconfig.cache
+D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\ref\MFC.dll
+D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.sourcelink.json
