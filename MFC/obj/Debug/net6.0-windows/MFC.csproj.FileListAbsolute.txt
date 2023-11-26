@@ -15,3 +15,6 @@ D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.pdb
 D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.genruntimeconfig.cache
 D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\ref\MFC.dll
 D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.sourcelink.json
+D:\Dev\impicontroller\MFC\bin\Debug\net6.0-windows\en-US\MFC.resources.dll
+D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.Form1.en-US.resources
+D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\en-US\MFC.resources.dll
