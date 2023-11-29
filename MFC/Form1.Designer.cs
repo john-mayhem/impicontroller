@@ -38,8 +38,6 @@
             textbox_password = new TextBox();
             lb_password = new Label();
             btn_refresh_start = new Button();
-            radiobtn_clear_settings = new RadioButton();
-            radiobtn_refresh_start = new RadioButton();
             btn_refresh_stop = new Button();
             btn_manual_ctrl = new Button();
             btn_automatic_ctrl = new Button();
@@ -55,12 +53,10 @@
             btn_speed_pct_100 = new Button();
             lb_connection_data = new Label();
             lb_settings = new Label();
-            lb_refresh_time = new Label();
             lb_refresh = new Label();
             btn_set_manual_speed = new Button();
             lb_manual_speed = new Label();
             textbox_manual_speed = new TextBox();
-            rb_update_speed_5s = new RadioButton();
             lb_fan1 = new Label();
             lb_dyn_speed_fan1 = new Label();
             lb_fan2 = new Label();
@@ -176,28 +172,6 @@
             btn_refresh_start.Text = "Start";
             btn_refresh_start.UseVisualStyleBackColor = true;
             btn_refresh_start.Click += StartButton_Click;
-            // 
-            // radiobtn_clear_settings
-            // 
-            radiobtn_clear_settings.AutoSize = true;
-            radiobtn_clear_settings.Location = new Point(535, 30);
-            radiobtn_clear_settings.Name = "radiobtn_clear_settings";
-            radiobtn_clear_settings.Size = new Size(51, 19);
-            radiobtn_clear_settings.TabIndex = 9;
-            radiobtn_clear_settings.TabStop = true;
-            radiobtn_clear_settings.Text = "3 sec";
-            radiobtn_clear_settings.UseVisualStyleBackColor = true;
-            // 
-            // radiobtn_refresh_start
-            // 
-            radiobtn_refresh_start.AutoSize = true;
-            radiobtn_refresh_start.Location = new Point(535, 78);
-            radiobtn_refresh_start.Name = "radiobtn_refresh_start";
-            radiobtn_refresh_start.Size = new Size(51, 19);
-            radiobtn_refresh_start.TabIndex = 11;
-            radiobtn_refresh_start.TabStop = true;
-            radiobtn_refresh_start.Text = "7 sec";
-            radiobtn_refresh_start.UseVisualStyleBackColor = true;
             // 
             // btn_refresh_stop
             // 
@@ -357,15 +331,6 @@
             lb_settings.TabIndex = 27;
             lb_settings.Text = "Settings";
             // 
-            // lb_refresh_time
-            // 
-            lb_refresh_time.AutoSize = true;
-            lb_refresh_time.Location = new Point(525, 5);
-            lb_refresh_time.Name = "lb_refresh_time";
-            lb_refresh_time.Size = new Size(73, 15);
-            lb_refresh_time.TabIndex = 28;
-            lb_refresh_time.Text = "Refresh time";
-            // 
             // lb_refresh
             // 
             lb_refresh.AutoSize = true;
@@ -401,17 +366,6 @@
             textbox_manual_speed.Name = "textbox_manual_speed";
             textbox_manual_speed.Size = new Size(35, 25);
             textbox_manual_speed.TabIndex = 32;
-            // 
-            // rb_update_speed_5s
-            // 
-            rb_update_speed_5s.AutoSize = true;
-            rb_update_speed_5s.Location = new Point(535, 54);
-            rb_update_speed_5s.Name = "rb_update_speed_5s";
-            rb_update_speed_5s.Size = new Size(51, 19);
-            rb_update_speed_5s.TabIndex = 10;
-            rb_update_speed_5s.TabStop = true;
-            rb_update_speed_5s.Text = "5 sec";
-            rb_update_speed_5s.UseVisualStyleBackColor = true;
             // 
             // lb_fan1
             // 
@@ -593,12 +547,8 @@
             settings_panel.Controls.Add(textbox_password);
             settings_panel.Controls.Add(lb_password);
             settings_panel.Controls.Add(btn_refresh_start);
-            settings_panel.Controls.Add(radiobtn_clear_settings);
-            settings_panel.Controls.Add(rb_update_speed_5s);
-            settings_panel.Controls.Add(radiobtn_refresh_start);
             settings_panel.Controls.Add(btn_refresh_stop);
             settings_panel.Controls.Add(lb_settings);
-            settings_panel.Controls.Add(lb_refresh_time);
             settings_panel.Controls.Add(lb_refresh);
             settings_panel.Location = new Point(15, 10);
             settings_panel.Name = "settings_panel";
@@ -842,8 +792,6 @@
         private TextBox textbox_password;
         private Label lb_password;
         private Button btn_refresh_start;
-        private RadioButton radiobtn_clear_settings;
-        private RadioButton radiobtn_refresh_start;
         private Button btn_refresh_stop;
         private Button btn_manual_ctrl;
         private Button btn_automatic_ctrl;
@@ -859,12 +807,10 @@
         private Button btn_speed_pct_100;
         private Label lb_connection_data;
         private Label lb_settings;
-        private Label lb_refresh_time;
         private Label lb_refresh;
         private Button btn_set_manual_speed;
         private Label lb_manual_speed;
         private TextBox textbox_manual_speed;
-        private RadioButton rb_update_speed_5s;
         private Label lb_fan1;
         private Label lb_dyn_speed_fan1;
         private Label lb_fan2;

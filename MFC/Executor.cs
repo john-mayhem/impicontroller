@@ -49,7 +49,6 @@ namespace MFC
                         process.WaitForExit(); // Ensure the process has completed
                     }
                 }
-                logger.Log($"Executed command: {command}\nResponse: {result}");
             }
             catch (Exception ex)
             {
@@ -76,25 +75,5 @@ namespace MFC
                 }
             });
         }
-
-
-        public async Task<string> GetCPUTemperaturesAsync(string ipAddress, string username, string password)
-        {
-            string command = "sdr type 0x01";
-            return await ExecuteCommandAsync(ipAddress, username, password, command);
-        }
-
-        public async Task<string> GetPowerConsumptionAsync(string ipAddress, string username, string password)
-        {
-            string command = "sdr type 0x03";
-            return await ExecuteCommandAsync(ipAddress, username, password, command);
-        }
-
-        public async Task<string> GetFanSpeedsAsync(string ipAddress, string username, string password)
-        {
-            string command = "sdr type 0x04";
-            return await ExecuteCommandAsync(ipAddress, username, password, command);
-        }
-
     }
 }

@@ -119,7 +119,6 @@ namespace MFC
             cancellationTokenSource?.Cancel();
             logger.Log("Stop button pressed. Refreshing stopped.");
         }
-
         private async Task StartIPMIRequests(CancellationToken token)
         {
             while (!token.IsCancellationRequested)
@@ -128,22 +127,29 @@ namespace MFC
                 {
                     var sensorList = await ipmiTool.GetSensorListAsync(textbox_ip.Text, textbox_username.Text, textbox_password.Text);
 
-                    // Log the raw sensor list output
-                    logger.Log("Raw Sensor List Output:");
-                    logger.Log(sensorList);
+                    string firstValue = ExtractValue(sensorList, 143, 147);
+                    string secondValue = ExtractValue(sensorList, 267, 271);
+                    string thirdValue = ExtractValue(sensorList, 391, 395);
+                    string fourthValue = ExtractValue(sensorList, 515, 519);
+                    string fifthValue = ExtractValue(sensorList, 639, 643);
+                    string sixthValue = ExtractValue(sensorList, 763, 767);
+                    string seventhValue = ExtractValue(sensorList, 15767, 15769);
+                    string eighthValue = ExtractValue(sensorList, 15891, 15893);
+                    string ninthValue = ExtractValue(sensorList, 7583, 7586);
 
-                    var fanRows = new[] { 0, 1, 2, 3, 4, 5 }; // Rows for fans
-                    var cpuRows = new[] { 126, 127 }; // Rows for CPU temperatures
-                    var powerRow = new[] { 60 }; // Row for power consumption
-
-                    var fanSpeeds = Parser.ParseSensorData(sensorList, fanRows, 2); // Column 2 for fan speeds
-                    var cpuTemps = Parser.ParseSensorData(sensorList, cpuRows, 2); // Column 2 for CPU temperatures
-                    var powerCons = Parser.ParseSensorData(sensorList, powerRow, 3); // Column 3 for power consumption
-
-                    foreach (var data in fanSpeeds.Concat(cpuTemps).Concat(powerCons))
+                    // Use Invoke to update UI controls from a different thread
+                    Invoke(new Action(() =>
                     {
-                        logger.Log(data);
-                    }
+                        lb_dyn_speed_fan1.Text = firstValue;
+                        lb_dyn_speed_fan2.Text = secondValue;
+                        lb_dyn_speed_fan3.Text = thirdValue;
+                        lb_dyn_speed_fan4.Text = fourthValue;
+                        lb_dyn_speed_fan5.Text = fifthValue;
+                        lb_dyn_speed_fan6.Text = sixthValue;
+                        lb_dyn_cpu_1_temp.Text = seventhValue;
+                        lb_dyn_cpu_2_temp.Text = eighthValue;
+                        lb_dyn_power_consumption.Text = ninthValue;
+                    }));
 
                     // Ensure cancellation is still not requested
                     if (token.IsCancellationRequested) break;
@@ -157,6 +163,16 @@ namespace MFC
                     logger.Log("Error: " + ex.Message);
                 }
             }
+        }
+
+        private string ExtractValue(string data, int startIndex, int endIndex)
+        {
+            // Ensure the indices are within the bounds of the string
+            if (startIndex < data.Length && endIndex <= data.Length && startIndex < endIndex)
+            {
+                return data.Substring(startIndex, endIndex - startIndex).Trim();
+            }
+            return "Value out of range";
         }
 
 
