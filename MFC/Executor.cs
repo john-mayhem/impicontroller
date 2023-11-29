@@ -21,50 +21,44 @@ namespace MFC
             this.statusLabel = statusLabel;
         }
 
+        public async Task<string> GetSensorListAsync(string ipAddress, string username, string password)
+        {
+            string command = "sensor list";
+            return await ExecuteCommandAsync(ipAddress, username, password, command);
+        }
+
         public async Task<string> ExecuteCommandAsync(string ipAddress, string username, string password, string command)
         {
+            string result = string.Empty;
             try
             {
-                var processStartInfo = new ProcessStartInfo
+                var startInfo = new ProcessStartInfo
                 {
                     FileName = toolPath,
                     Arguments = $"-I lanplus -H {ipAddress} -U {username} -P {password} {command}",
-                    RedirectStandardOutput = true,
                     UseShellExecute = false,
+                    RedirectStandardOutput = true,
                     CreateNoWindow = true
                 };
 
-                using var process = new Process { StartInfo = processStartInfo };
-                process.Start();
-                var outputTask = process.StandardOutput.ReadToEndAsync();
-
-                if (await Task.WhenAny(outputTask, Task.Delay(4000)) == outputTask)
+                using (var process = Process.Start(startInfo))
                 {
-                    var result = await outputTask;
-                    process.WaitForExit();
-                    logger.Log($"Executed command: {command}");
-                    logger.Log($"Response: {result}");
-
-                    // Update label on successful execution
-                    UpdateStatusLabel(true, result);
-                    return result;
+                    using (var reader = process.StandardOutput)
+                    {
+                        result = await reader.ReadToEndAsync(); // Wait for the entire output
+                        process.WaitForExit(); // Ensure the process has completed
+                    }
                 }
-                else
-                {
-                    process.Kill();
-                    var timeoutError = $"Command timed out: {command}";
-                    logger.Log(timeoutError);
-                    UpdateStatusLabel(false);
-                    return timeoutError;
-                }
+                logger.Log($"Executed command: {command}\nResponse: {result}");
             }
             catch (Exception ex)
             {
                 logger.Log($"Error executing command: {command} - Exception: {ex.Message}");
-                UpdateStatusLabel(false);
-                return $"Error: {ex.Message}";
             }
+            return result;
         }
+
+
 
         private void UpdateStatusLabel(bool isSuccess, string response = " ")
         {
@@ -82,5 +76,25 @@ namespace MFC
                 }
             });
         }
+
+
+        public async Task<string> GetCPUTemperaturesAsync(string ipAddress, string username, string password)
+        {
+            string command = "sdr type 0x01";
+            return await ExecuteCommandAsync(ipAddress, username, password, command);
+        }
+
+        public async Task<string> GetPowerConsumptionAsync(string ipAddress, string username, string password)
+        {
+            string command = "sdr type 0x03";
+            return await ExecuteCommandAsync(ipAddress, username, password, command);
+        }
+
+        public async Task<string> GetFanSpeedsAsync(string ipAddress, string username, string password)
+        {
+            string command = "sdr type 0x04";
+            return await ExecuteCommandAsync(ipAddress, username, password, command);
+        }
+
     }
 }

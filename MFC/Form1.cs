@@ -102,6 +102,64 @@ namespace MFC
             logger.Log("Cleared settings fields.");
         }
 
+        private CancellationTokenSource cancellationTokenSource;
+
+        private void StartButton_Click(object sender, EventArgs e)
+        {
+            // This will prevent starting multiple tasks if the button is clicked more than once.
+            if (cancellationTokenSource == null || cancellationTokenSource.IsCancellationRequested)
+            {
+                cancellationTokenSource = new CancellationTokenSource();
+                Task.Run(() => StartIPMIRequests(cancellationTokenSource.Token));
+                logger.Log("Start button pressed. Started making IPMI requests.");
+            }
+        }
+        private void StopButton_Click(object sender, EventArgs e)
+        {
+            cancellationTokenSource?.Cancel();
+            logger.Log("Stop button pressed. Refreshing stopped.");
+        }
+
+        private async Task StartIPMIRequests(CancellationToken token)
+        {
+            while (!token.IsCancellationRequested)
+            {
+                try
+                {
+                    var sensorList = await ipmiTool.GetSensorListAsync(textbox_ip.Text, textbox_username.Text, textbox_password.Text);
+
+                    // Log the raw sensor list output
+                    logger.Log("Raw Sensor List Output:");
+                    logger.Log(sensorList);
+
+                    var fanRows = new[] { 0, 1, 2, 3, 4, 5 }; // Rows for fans
+                    var cpuRows = new[] { 126, 127 }; // Rows for CPU temperatures
+                    var powerRow = new[] { 60 }; // Row for power consumption
+
+                    var fanSpeeds = Parser.ParseSensorData(sensorList, fanRows, 2); // Column 2 for fan speeds
+                    var cpuTemps = Parser.ParseSensorData(sensorList, cpuRows, 2); // Column 2 for CPU temperatures
+                    var powerCons = Parser.ParseSensorData(sensorList, powerRow, 3); // Column 3 for power consumption
+
+                    foreach (var data in fanSpeeds.Concat(cpuTemps).Concat(powerCons))
+                    {
+                        logger.Log(data);
+                    }
+
+                    // Ensure cancellation is still not requested
+                    if (token.IsCancellationRequested) break;
+                }
+                catch (OperationCanceledException)
+                {
+                    break;
+                }
+                catch (Exception ex)
+                {
+                    logger.Log("Error: " + ex.Message);
+                }
+            }
+        }
+
+
         private async void ManualControlButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(textbox_ip.Text) &&
@@ -120,6 +178,7 @@ namespace MFC
                 lb_operation_status.BackColor = Color.Red;
             }
             EnablePercentageControls();
+            logger.Log("Manual control engaged.");
         }
 
         private async void AutoControlButton_Click(object sender, EventArgs e)
@@ -140,6 +199,7 @@ namespace MFC
                 lb_operation_status.BackColor = Color.Red;
             }
             DisablePercentageControls();
+            logger.Log("Automatic control engaged.");
         }
 
         private async void btn_speed_pct_10_Click(object sender, EventArgs e)

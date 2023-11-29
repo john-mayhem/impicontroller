@@ -1,27 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dev\\impicontroller\\MFC\\MFC.csproj": {}
+    "C:\\Users\\Maxim Roman\\source\\repos\\impicontroller\\MFC\\MFC.csproj": {}
   },
   "projects": {
-    "D:\\Dev\\impicontroller\\MFC\\MFC.csproj": {
+    "C:\\Users\\Maxim Roman\\source\\repos\\impicontroller\\MFC\\MFC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dev\\impicontroller\\MFC\\MFC.csproj",
+        "projectUniqueName": "C:\\Users\\Maxim Roman\\source\\repos\\impicontroller\\MFC\\MFC.csproj",
         "projectName": "MFC",
-        "projectPath": "D:\\Dev\\impicontroller\\MFC\\MFC.csproj",
-        "packagesPath": "C:\\Users\\maksi\\.nuget\\packages\\",
-        "outputPath": "D:\\Dev\\impicontroller\\MFC\\obj\\",
+        "projectPath": "C:\\Users\\Maxim Roman\\source\\repos\\impicontroller\\MFC\\MFC.csproj",
+        "packagesPath": "C:\\Users\\Maxim Roman\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Maxim Roman\\source\\repos\\impicontroller\\MFC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maksi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Maxim Roman\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0-windows"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0-windows7.0": {

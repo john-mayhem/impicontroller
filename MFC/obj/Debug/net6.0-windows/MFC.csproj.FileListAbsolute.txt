@@ -18,3 +18,23 @@ D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.sourcelink.json
 D:\Dev\impicontroller\MFC\bin\Debug\net6.0-windows\en-US\MFC.resources.dll
 D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.Form1.en-US.resources
 D:\Dev\impicontroller\MFC\obj\Debug\net6.0-windows\en-US\MFC.resources.dll
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\bin\Debug\net6.0-windows\MFC.exe
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\bin\Debug\net6.0-windows\MFC.deps.json
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\bin\Debug\net6.0-windows\MFC.runtimeconfig.json
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\bin\Debug\net6.0-windows\MFC.dll
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\bin\Debug\net6.0-windows\MFC.pdb
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\bin\Debug\net6.0-windows\en-US\MFC.resources.dll
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.Form1.resources
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.Form1.en-US.resources
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.csproj.GenerateResource.cache
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.AssemblyInfoInputs.cache
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.AssemblyInfo.cs
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.csproj.CoreCompileInputs.cache
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.sourcelink.json
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\obj\Debug\net6.0-windows\en-US\MFC.resources.dll
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.dll
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\obj\Debug\net6.0-windows\refint\MFC.dll
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.pdb
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\obj\Debug\net6.0-windows\MFC.genruntimeconfig.cache
+C:\Users\Maxim Roman\source\repos\impicontroller\MFC\obj\Debug\net6.0-windows\ref\MFC.dll

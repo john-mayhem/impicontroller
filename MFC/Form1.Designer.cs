@@ -175,6 +175,7 @@
             btn_refresh_start.TabIndex = 8;
             btn_refresh_start.Text = "Start";
             btn_refresh_start.UseVisualStyleBackColor = true;
+            btn_refresh_start.Click += StartButton_Click;
             // 
             // radiobtn_clear_settings
             // 
@@ -206,6 +207,7 @@
             btn_refresh_stop.TabIndex = 12;
             btn_refresh_stop.Text = "Stop";
             btn_refresh_stop.UseVisualStyleBackColor = true;
+            btn_refresh_stop.Click += StopButton_Click;
             // 
             // btn_manual_ctrl
             // 
